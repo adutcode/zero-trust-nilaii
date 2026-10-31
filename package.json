@@ -1,0 +1,23 @@
+{
+  "name": "zero-trust-sistem-nilai",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "db:seed": "node database.js",
+    "gateway": "node gateway/gateway.js",
+    "nilai": "node nilai-service/server.js",
+    "transkrip": "node transkrip-service/server.js",
+    "start:all": "concurrently -k \"npm run gateway\" \"npm run nilai\" \"npm run transkrip\""
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.4.1",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
